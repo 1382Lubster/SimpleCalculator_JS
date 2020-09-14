@@ -1,0 +1,76 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaSctipt Calculator</title>
+	<link rel="stylesheet" href="stylecalc.css">
+</head>
+
+<body>
+	<script>
+	function GetResult(result){
+		form.displayResult.value=form.displayResult.value+result;		
+	}
+
+	function clearText()  
+	{
+		form.displayResult.value="";
+	}  
+	function roundnumber0(){
+		var n=form.displayResult.value;
+		form.displayResult.value=Number(n).toFixed(0);
+	}
+	function roundnumber1(){
+		var n=form.displayResult.value;
+		form.displayResult.value=Number(n).toFixed(1);
+	}
+
+	function getabsvalue(){
+		var n=form.displayResult.value;
+		form.displayResult.value=Number(Math.abs(n));
+	}
+	</script>
+	<div class="container">
+		<form name="form">
+		<div class="display">
+			<input type="text" placeholder="0" name="displayResult"  id="resultarea"/>
+		</div>
+			<div class="buttons">
+				<div class="row">
+				<input type="button" name="clear" value="C" onClick="clearText(displayResult.value)" id="clearbutton">
+				<input type="button" name="roundnum" value="Rnd" onClick="roundnumber0(displayResult.value)" id="roundnum">
+				<input type="button" name="roundnum" value="Rnd1" onClick="roundnumber1(displayResult.value)" id="roundnum">
+				<input type="button" name="absval" value="Abs" onClick="getabsvalue(displayResult.value)" id="absval">
+				</div>
+
+			  <div class="row">
+				<input type="button" name="b7" value="7" onClick="GetResult(b7.value)">
+				  <input type="button" name="b8" value="8" onClick="GetResult(b8.value)">
+				  <input type="button" name="b9" value="9" onClick="GetResult(b9.value)">
+				  <input type="button" name="add" value="+" onClick="GetResult(add.value)">
+				</div>
+				
+				<div class="row">
+				<input type="button" name="b4" value="4" onClick="GetResult(b4.value)">
+				  <input type="button" name="b5" value="5" onClick="GetResult(b5.value)">
+				  <input type="button" name="b6" value="6" onClick="GetResult(b6.value)">
+				  <input type="button" name="sub" value="-" onClick="GetResult(sub.value)">
+				</div>
+				
+				<div class="row">
+				<input type="button" name="b1" value="1" onClick="GetResult(b1.value)">
+				  <input type="button" name="b2" value="2" onClick="GetResult(b2.value)">
+				  <input type="button" name="b3" value="3" onClick="GetResult(b3.value)">
+				  <input type="button" name="xply" value="*" onClick="GetResult(xply.value)">
+				</div>
+				<div class="row">
+				  <input type="button" name="decimal" value="." onClick="GetResult(decimal.value)">
+				  <input type="button" name="div" value="/" onClick="GetResult(div.value)">
+				  <input type="button" name="b0" value="0" onClick="GetResult(b0.value)">
+				  <input type="button" class="equalbutton" value="=" onClick="displayResult.value=eval(displayResult.value)">
+				</div>
+			</div>
+		</form>
+	</div>
+	</body>
+	
+</html>
